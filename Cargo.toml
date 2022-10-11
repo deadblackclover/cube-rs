@@ -1,0 +1,14 @@
+[package]
+name = "cube-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["DEADBLACKCLOVER <deadblackclover@protonmail.com>"]
+description = "Spinning Cube"
+license = "GPL-3.0"
+readme = "README.md"
+homepage = "https://github.com/deadblackclover/cube-rs"
+repository = "https://github.com/deadblackclover/cube-rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
