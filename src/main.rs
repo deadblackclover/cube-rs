@@ -100,9 +100,10 @@ impl Cube {
 
     fn update(&mut self) {
         let mut cube_x = -self.cube_width as f64;
-        let mut cube_y = -self.cube_width as f64;
 
         while cube_x < self.cube_width as f64 {
+            let mut cube_y = -self.cube_width as f64;
+
             while cube_y < self.cube_width as f64 {
                 self.calculate_for_surface(
                     cube_x as f64,
