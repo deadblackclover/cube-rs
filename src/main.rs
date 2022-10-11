@@ -8,6 +8,7 @@ struct Cube {
     horizontal_offset: i64,
     distance_from_cam: f64,
     k1: i64,
+    increment_speed: f64,
     a: f64,
     b: f64,
     c: f64,
@@ -22,6 +23,7 @@ impl Cube {
             horizontal_offset: offset * cube_width,
             distance_from_cam: 100.0,
             k1: 40,
+            increment_speed: 0.6,
             a: 0.0,
             b: 0.0,
             c: 0.0,
@@ -97,11 +99,11 @@ impl Cube {
     }
 
     fn update(&mut self) {
-        let mut cube_x = -self.cube_width;
-        let mut cube_y = -self.cube_width;
+        let mut cube_x = -self.cube_width as f64;
+        let mut cube_y = -self.cube_width as f64;
 
-        while cube_x < self.cube_width {
-            while cube_y < self.cube_width {
+        while cube_x < self.cube_width as f64 {
+            while cube_y < self.cube_width as f64 {
                 self.calculate_for_surface(
                     cube_x as f64,
                     cube_y as f64,
@@ -139,9 +141,9 @@ impl Cube {
                     '+',
                 );
 
-                cube_y += 1;
+                cube_y += self.increment_speed;
             }
-            cube_x += 1;
+            cube_x += self.increment_speed;
         }
     }
 }
